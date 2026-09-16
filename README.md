@@ -36,4 +36,5 @@ This system reduces manual paperwork and makes the leave process easier.
 * **MySQL**
 * **HTML**
 * **CSS**
+* **Streamlit**
 * **Git & GitHub**
