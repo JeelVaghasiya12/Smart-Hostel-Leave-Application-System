@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "Smart-Hostel-Leave-Application-System",
+			"path": "../Smart-Hostel-Leave-Application-System"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "hostel_leave"
+	}
+}
