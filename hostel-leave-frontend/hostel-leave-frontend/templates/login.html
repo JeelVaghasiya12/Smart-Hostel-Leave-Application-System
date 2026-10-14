@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Hostel Leave</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <h1>Hostel Leave</h1>
+    <p class="muted">Log in to apply for leave or review requests.</p>
+
+    <form id="login-form">
+      <label>Email
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>Password
+        <input type="password" name="password" required autocomplete="current-password">
+      </label>
+      <p id="message" class="message" role="alert"></p>
+      <button type="submit" class="btn">Log in</button>
+    </form>
+
+    <p class="muted">New student? <a href="/register">Create an account</a></p>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

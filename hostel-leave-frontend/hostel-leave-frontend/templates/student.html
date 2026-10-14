@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My leave · Hostel Leave</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <strong class="brand">Hostel Leave</strong>
+    <div class="topbar-right">
+      <span>{{ user.name }}</span>
+      <button class="btn ghost small" id="logout-btn">Log out</button>
+    </div>
+  </header>
+
+  <main class="layout student-layout">
+    <div class="stack">
+      <section class="card">
+        <h2>Apply for leave</h2>
+        <form id="leave-form">
+          <label>From
+            <input type="date" name="from_date" id="from-date" required>
+          </label>
+          <label>To
+            <input type="date" name="to_date" id="to-date" required>
+          </label>
+          <label>Reason
+            <textarea name="reason" rows="3" maxlength="500" required></textarea>
+          </label>
+          <p id="message" class="message" role="alert"></p>
+          <button type="submit" class="btn">Submit request</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Notifications <span id="note-count" class="count" hidden>0</span></h2>
+          <button class="btn ghost small" id="mark-read-btn" hidden>Mark all as read</button>
+        </div>
+        <ul id="note-list" class="notes"></ul>
+        <p id="note-empty" class="empty" hidden>No notifications yet. You'll see the warden's decisions here.</p>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>My requests</h2>
+      <div class="table-wrap">
+        <table id="leave-table" hidden>
+          <thead>
+            <tr><th>Dates</th><th>Reason</th><th>Status</th></tr>
+          </thead>
+          <tbody id="leave-body"></tbody>
+        </table>
+      </div>
+      <p id="leave-empty" class="empty" hidden>You haven't requested any leave yet. Use the form to submit your first request.</p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/student.js') }}"></script>
+</body>
+</html>

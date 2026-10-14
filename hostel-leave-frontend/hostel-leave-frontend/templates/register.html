@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account · Hostel Leave</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <h1>Create your account</h1>
+    <p class="muted">Student accounts only. Wardens are added by the hostel office.</p>
+
+    <form id="register-form">
+      <label>Full name
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+      <label>Email
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>Password
+        <input type="password" name="password" required minlength="6" autocomplete="new-password">
+      </label>
+      <p id="message" class="message" role="alert"></p>
+      <button type="submit" class="btn">Create account</button>
+    </form>
+
+    <p class="muted">Already registered? <a href="/login">Log in</a></p>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

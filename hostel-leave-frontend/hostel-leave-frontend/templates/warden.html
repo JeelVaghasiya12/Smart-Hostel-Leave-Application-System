@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave requests · Hostel Leave</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <strong class="brand">Hostel Leave</strong>
+    <div class="topbar-right">
+      <span>{{ user.name }}</span>
+      <button class="btn ghost small" id="logout-btn">Log out</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="card-head">
+        <h2>Leave requests <span id="pending-count" class="muted"></span></h2>
+        <label class="inline">Show
+          <select id="status-filter">
+            <option value="Pending" selected>Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+            <option value="All">All</option>
+          </select>
+        </label>
+      </div>
+
+      <p id="message" class="message" role="alert"></p>
+
+      <div class="table-wrap">
+        <table id="leave-table" hidden>
+          <thead>
+            <tr><th>Student</th><th>Dates</th><th>Reason</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody id="leave-body"></tbody>
+        </table>
+      </div>
+      <p id="leave-empty" class="empty" hidden>No requests in this view.</p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/warden.js') }}"></script>
+</body>
+</html>
